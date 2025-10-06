@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+
+<body>
+    <script>
+
+        //console.log("aastha",shiva)              // shiva is not defined error
+
+        // let num= 30
+        // {
+        //     let num = 40
+        //     console.log(num);                  // here we redclared let using scope block
+        // }
+        // console.log(num);
+
+
+        // var x = "outer";
+        // {
+        //    var x = "inner";
+        // }
+        // console.log(x);
+
+
+        // var obj = { allo:1, tomato:3, gobi:5}
+        // console.log(obj);
+
+        {
+            var a = 10
+            let b = 20
+            const c = 30
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+
+
+        var num = 1;
+        {
+            let num = 2;
+
+            {
+                const num = 3;
+                console.log(num);
+            }
+
+            console.log(num);
+        }
+        console.log(num);
+
+
+    </script>
+</body>
+
+</html>
