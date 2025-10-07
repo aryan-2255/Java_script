@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Practice</title>
+    </head>
+
+    <body>
+        <script>
+          
+            // Object Merging with Spread
+             
+            let varad = {
+                name: "varad",
+                email: "v@gmail.com",
+            };
+
+            let stats = {
+                salary: 7000000000000000000000000000000000000n, // BigInt
+                dept: "Data Engineer",
+            };
+
+            let copy = { ...varad, ...stats };
+            console.log("Merged Object:", copy);
+            console.log("Original varad Object:", varad);
+
+            
+            // Object Assignment vs Copy
+        
+            let obj = { name: "varad", email: "v@gmail.com" };
+
+            // Reference assignment
+            let objRef = obj;
+            objRef.name = "Raj";
+            console.log("After Reference Assignment:", obj); // obj also changed
+
+            // Shallow copy using spread
+            let objShallow = { ...obj };
+            console.log("Shallow Copy:", objShallow);
+
+            // Deep copy using structuredClone (modern JS)
+            let objDeep = structuredClone(obj);
+            console.log("Deep Copy:", objDeep);
+
+            // Deep copy using JSON
+            let objJsonCopy = JSON.parse(JSON.stringify(obj));
+            objJsonCopy.subject = { cse: "JavaScript" };
+            console.log("Original obj:", obj);
+            console.log("JSON Deep Copy with Subject:", objJsonCopy);
+
+            
+            // Function with Template Literal.     
+            // callback;
+            
+            function calculator(a, b) {
+                return `The total calculated value is ${a + b}`;
+            }
+
+            console.log(calculator(20, 30));
+
+            function calculator(a, b, callback) {
+                return `the total calculated value is ${callback(a, b)}`;
+            }
+            function add(a, b) {
+                return a + b;
+            }
+            function sub(a, b) {
+                return a - b;
+            }
+            function mul(a, b) {
+                return a * b;
+            }
+            function div(a, b) {
+                return a / b;
+            }
+            console.log(calculator(20, 30, add));
+            console.log(calculator(20, 30, sub));
+            console.log(calculator(20, 30, mul));
+            console.log(calculator(20, 30, div));
+
+            // let arr = [1,2,3,4,15,16];
+            // arr.forEach(search);
+            //     function search(ele,i,arr){
+            //         if (ele >12) return ele;
+            //     }
+            //     console.log(elements);
+            
+        
+            let arr = [1,2,3,4,15,16,"ata"];
+            let result = arr.filter(arrFilter);
+            function arrFilter(ele,i,arr){
+                if (ele >100) return ele;
+            }
+            console.log(result);
+
+
+            
+        </script>
+    </body>
+
+    </html>
