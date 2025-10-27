@@ -8,7 +8,7 @@
 // console.log(hello my name is ${name}  my age is ${age});
 
 
-// let str="Hello Aryan"
+// let str="Hello Aryan "
 // console.log(str.length);
 // let newstr=(str.trim());
 // console.log(newstr[2],str[0]);

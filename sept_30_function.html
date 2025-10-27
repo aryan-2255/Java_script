@@ -9,16 +9,16 @@
 
 <body>
     <script>
-        // function generateBill(){
-        //     var amount1 = 200;
-        //     var amount2 = 300;
-        //     var amount3 = 400;
-        //     var total = amount1 + amount2 + amount3;
-        //     console.log(total);
-        // }
-        // generateBill();
+        function generateBill(){
+            var amount1 = 200;
+            var amount2 = 300;
+            var amount3 = 400;
+            var total = amount1 + amount2 + amount3;
+            console.log(total);
+        }
+        generateBill();
 
-        //console.log(generateBill(200, 300, 500));
+        console.log(generateBill(200, 300, 500));
 
 
         // function generateBill(amount1, amount2, amount3) {
@@ -32,30 +32,29 @@
         // console.log(generateBill(200, 300, 600,));
 
 
-        // function generateBill(...amounts) {
-        //     let totalamount = 0;
-        //     for(let i = 0; i < amounts.length; i++){
-        //         totalamount += amounts[i];
-        //     }
+        function generateBill(...amounts) {
+            let totalamount = 0;
+            for(let i = 0; i < amounts.length; i++){
+                totalamount += amounts[i];
+            }
 
-        //     return "hello sir your total bill is " + totalamount;
-        // }
-        // console.log(generateBill(100, 300, 200,400));
+            return "hello sir your total bill is " + totalamount;
+        }
+        console.log(generateBill(100, 300, 200,400));
 
 
 
      // // question  check number is even or odd
 
-        // function evenNo(num) {
-        //     num = prompt("koi number daalo");
-        //     num = parseInt(num);
-        //     console.log(evenNo());
-        //     if (num % 2 === 0)
-        //         return "even hai";
-        //     else
-        //         return "odd hai";
-        // }
-        // console.log(evenNo());
+        function evenNo(num) {
+            num = parseInt(num);
+            if (num % 2 === 0)
+                return "even hai";
+            else
+                return "odd hai";
+        }
+         x = prompt("koi number daalo");
+        console.log(evenNo(x));
 
 
 
@@ -83,9 +82,9 @@
         //     return a+b;
         
         // }
-        // let multiply = (a,b) => a*b;
+        let multiply = (a,b) => a*b;
         // console.log(sum(2,3));
-        // console.log(multiply(2,3));
+        console.log(multiply(2,3));
 
 
 
