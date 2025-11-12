@@ -6,9 +6,28 @@
     <title>DOM</title>
 </head>
 <body>
+    <div>
+    <ul class="list">
+        <li>list Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere numquam dolorum, maxime ut vel animi neque vero perspiciatis! Aspernatur, veritatis? Enim odit eaque non. Fugit soluta nihil animi facilis harum.</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+        <li>list</li>
+    </ul>
+    </div>
 
     <script>
-        
+
+        const ul = document.querySelector(".list")
+        let childcollector = ul.children;
+        console.log(childcollector);
+        n = childcollector.length;
+        for(let i = 0; i<n; i++){
+            if(i%2 ==0) childcollector[i].style.color = "red";
+            else childcollector[i].style.color = "green";
+        }
+
+
     </script>
 </body>
 </html>
