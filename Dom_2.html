@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dom 2</title>
-</head>
-<body>
+  </head>
+  <body>
+    <button>don't touch</button>
+
     <script>
-        // event in js
-        
+      // event in js An event is an action or occurrence that happens in the browser — for example:
+      // A user clicks a button
+      // A user moves the mouse
+      // A key is pressed
+      // The page loads
+      // A form submits, etc.
+      // Examples of event names:
+      // click, mouseover, keydown, submit, scroll, change, load, etc.
+
+      const btn = document.querySelector("button");
+      btn.addEventListener('click',openDoor);
+      function openDoor(){
+        console.log("Opening Door......")
+      }
     </script>
-</body>
+  </body>
 </html>
