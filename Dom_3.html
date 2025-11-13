@@ -1,14 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM 3</title>
+    <title>Document</title>
 </head>
 <body>
-    
+    <img src="https://thumbs.dreamstime.com/b/r-214795388.jpg" alt="click me image">
+    <input type="text">
     <script>
-
+        const btn = document.querySelector("img");
+        const input = document.querySelector("input")
+        input.addEventListener("input",function(){
+            console.log("i am typing ")
+        })
     </script>
 </body>
 </html>
