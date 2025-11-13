@@ -6,8 +6,41 @@
     <title>DOM 4</title>
 </head>
 <body>
+    <label for="myInput"></label>
+    <input type="text" placeholder="describe Task" id="myInput">
+    <button id="add">Add</button>
+    <button id="delete">Delete</button>
+
+    <p></p>
+
     <script>
+
+        const input = document.getElementById("myInput");
+        const add = document.getElementById("add");
+        const del = document.getElementById("delete")
         
+        const htmlelement = document.querySelector("p");
+
+        const task = document.createElement("li");
+
+
+
+        add.addEventListener("click",function(){
+
+            // for tag already exist in html
+            htmlelement.textContent = input.value
+            console.log(htmlelement)
+
+            // if we create new tag in java script(JS)
+            task.innerHTML = input.value
+            document.body.append(task)
+            console.log(task)
+        })
+
+        del.addEventListener("click" , function(){
+           task.remove()
+           htmlelement.remove()
+        })
     </script>
 </body>
 </html>
