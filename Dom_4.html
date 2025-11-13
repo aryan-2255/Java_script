@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM 4</title>
-</head>
-<body>
-    <label for="myInput"></label>
-    <input type="text" placeholder="describe Task" id="myInput">
+  </head>
+  <body>
+    <label for="myInput">Task</label>
+    <input type="text" placeholder="describe Task" id="myInput" />
+    <br />
+    <br />
     <button id="add">Add</button>
     <button id="delete">Delete</button>
+    <br />
 
-    <p></p>
+    <!-- <p></p> -->
 
     <script>
+      const input = document.getElementById("myInput");
+      const add = document.getElementById("add");
+      const del = document.getElementById("delete");
 
-        const input = document.getElementById("myInput");
-        const add = document.getElementById("add");
-        const del = document.getElementById("delete")
-        
-        const htmlelement = document.querySelector("p");
+      add.addEventListener("click", function () {
+        // for tag already exist in html
+        // const htmlelement = document.querySelector("p");
+        // htmlelement.textContent = input.value
+        // console.log(htmlelement)
 
-        const task = document.createElement("li");
+        // if we create new tag in java script(JS)
+        const task = document.createElement("div");
+        task.innerHTML = input.value;
+        document.body.append(task);
+        input.value = "";
+        console.log(task);
+      });
 
-
-
-        add.addEventListener("click",function(){
-
-            // for tag already exist in html
-            htmlelement.textContent = input.value
-            console.log(htmlelement)
-
-            // if we create new tag in java script(JS)
-            task.innerHTML = input.value
-            document.body.append(task)
-            console.log(task)
-        })
-
-        del.addEventListener("click" , function(){
-           task.remove()
-           htmlelement.remove()
-        })
+      del.addEventListener("click", function () {
+        task.remove();
+        // htmlelement.remove()
+      });
     </script>
-</body>
+  </body>
 </html>
