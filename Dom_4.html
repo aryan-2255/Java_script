@@ -20,24 +20,37 @@
       const input = document.getElementById("myInput");
       const add = document.getElementById("add");
       const del = document.getElementById("delete");
-
+        
       add.addEventListener("click", function () {
         // for tag already exist in html
         // const htmlelement = document.querySelector("p");
         // htmlelement.textContent = input.value
         // console.log(htmlelement)
 
+        
         // if we create new tag in java script(JS)
         const task = document.createElement("div");
         task.innerHTML = input.value;
         document.body.append(task);
         input.value = "";
         console.log(task);
+
+
+        task.addEventListener("click",function(e){
+          e.target.remove()
+        })
+
       });
 
+
       del.addEventListener("click", function () {
-        task.remove();
-        // htmlelement.remove()
+        const div=document.querySelectorAll("div");
+
+        if(div.length>0){
+        const rem = div[div.length-1]
+        rem.remove()
+        }
+        console.log(div);
       });
     </script>
   </body>
