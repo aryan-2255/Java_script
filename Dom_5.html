@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM 5</title>
-</head>
-<body>
-    
-</body>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            width: 100vw;
+            background-color: grey;
+        }
+        .circle{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button>undo</button>
+      <button>redo</button>
+      <button>reset</button>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container")
+
+        container.addEventListener("click" , gernatecircle)
+
+        function gernatecircle(e){
+            const circle = document.createElement("div")
+            circle.className = "circle"
+
+            circle.style.left = e.pageX + "px";
+            circle.style.top = e.pageY + "px";
+            circle.style.transform = "translate(-50% , -50%)"
+            circle.style.backgroundColor = `rgba(${randomNumber(255,0)}, ${randomNumber(255,0)}, ${randomNumber(255,0)})`
+            container.append(circle)
+
+        }
+        function randomNumber(max, min){
+            return Math.floor(Math.random()*(max-min)+min)
+        }
+    </script>
+  </body>
 </html>
