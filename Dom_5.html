@@ -6,34 +6,34 @@
     <title>DOM 5</title>
 
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .container{
-            height: 100vh;
-            width: 100vw;
-            background-color: grey;
-        }
-        .circle{
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 1;
-        }
-        #reset{
-            position:relative;
-            z-index: 2;
-        }
-        #undo{
-            position: relative;
-            z-index: 2;
-        }
-        #redo{
-            position: relative;
-            z-index: 2;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 100vh;
+        width: 100vw;
+        background-color: grey;
+      }
+      .circle {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+      }
+      #reset {
+        position: relative;
+        z-index: 2;
+      }
+      #undo {
+        position: relative;
+        z-index: 2;
+      }
+      #redo {
+        position: relative;
+        z-index: 2;
+      }
     </style>
   </head>
   <body>
@@ -44,30 +44,46 @@
     </div>
 
     <script>
-        const container = document.querySelector(".container")
+      const container = document.querySelector(".container");
 
-        container.addEventListener("click" , gernatecircle)
+      container.addEventListener("click", gernatecircle);
 
-        function gernatecircle(e){
-            const circle = document.createElement("div")
-            circle.className = "circle"
+      function gernatecircle(e) {
+        const circle = document.createElement("div");
+        circle.className = "circle";
 
-            circle.style.left = e.pageX + "px";
-            circle.style.top = e.pageY + "px";
-            circle.style.transform = "translate(-50% , -50%)"
-            circle.style.backgroundColor = `rgba(${randomNumber(255,0)}, ${randomNumber(255,0)}, ${randomNumber(255,0)})`
-            container.append(circle)
+        circle.style.left = e.pageX + "px";
+        circle.style.top = e.pageY + "px";
+        circle.style.transform = "translate(-50% , -50%)";
+        circle.style.backgroundColor = `rgba(${randomNumber(
+          255,
+          0
+        )}, ${randomNumber(255, 0)}, ${randomNumber(255, 0)})`;
+        container.append(circle);
+      }
+      function randomNumber(max, min) {
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+      //undo
+      const undo = document.querySelector("#undo");
+      undo.addEventListener("click", function () {
+        const U = document.querySelector(".circle");
+        U.remove();
+      });
 
-        }
-        function randomNumber(max, min){
-            return Math.floor(Math.random()*(max-min)+min)
-        }
- 
-        const reset = document.getElementById("reset")
-        reset.addEventListener("click",function(){
-                document.getElementsByClassName("circle").remove()
-        })
+      //redo
+      const redo = document.querySelector("#redo")
+      redo.addEventListener("click", function(){
 
+
+      })
+
+      //reset
+      const reset = document.querySelector("#reset")
+      reset.addEventListener("click",function(){
+
+
+      })
     </script>
   </body>
 </html>
