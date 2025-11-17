@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOm 6</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom 6</title>
+    <link href="
+https://cdn.jsdelivr.net/npm/notiflix@3.2.8/src/notiflix.min.css
+" rel="stylesheet">
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        form{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 70vh;
-            margin: auto;
-            padding: 2rem;
-            background-color: lightblue;
-            border-radius: 2rem;
-            margin-top: 16%;
-        }
-        input{
-            width: max-content;
-            margin: auto;
-        }
-        #btn:hover{
-            background-color:lightgray;
-
-        }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 70vh;
+        margin: auto;
+        padding: 2rem;
+        background-color: lightblue;
+        border-radius: 2rem;
+        margin-top: 16%;
+      }
+      input {
+        width: max-content;
+        margin: auto;
+      }
+      #btn:hover {
+        background-color: lightgray;
+      }
     </style>
-</head>
-<body>
-    <form action="">
-        <input type="text" placeholder="Enter your name" id="name">
-        <input type="email" placeholder="Enter your email" id="email">
-        <input type="number" placeholder="Enter mobile number" id="mobile">
-        <input type="password" placeholder="Enter password" id="password">
-        <input type="password" placeholder="Confirm password" id="cnfpassword">
-        <input type="submit" id="btn">
+  </head>
+  <body>
+    <form>
+      <input type="text" placeholder="Enter your name" id="name" />
+      <input type="email" placeholder="Enter your email" id="email" />
+      <input type="number" placeholder="Enter mobile number" id="mobile" />
+      <input type="password" placeholder="Enter password" id="password" />
+      <input type="password" placeholder="Confirm password" id="cnfpassword" />
+      <input type="submit" id="btn" />
     </form>
+    <script src="
+https://cdn.jsdelivr.net/npm/notiflix@3.2.8/dist/notiflix-aio-3.2.8.min.js
+"></script>
     <script>
-        const submit = document.getElementById("btn");
-        const nameField = document.getElementById("name");
-        submit.addEventListener('click',handleFormSubmition)
-        function handleFormSubmition(e){
-            e.preventDefault();
-        }
+      const submit = document.getElementById("btn");
+      const nameField = document.getElementById("name");
+      const mail = document.getElementById("email");
+
+      submit.addEventListener("click", handleFormSubmition);
+
+      function handleFormSubmition(e) {
+        e.preventDefault();
+        // if (nameField.value.length < 3)
+        //     Notiflix.Notify.failure("invalid name")
+
+
+
+        console.log(validdateMail(mail.value));
+      }
+      function validdateMail(mail) {
+        console.log(mail.split("@"))
+        return(mai.includes("@"))
+      }
     </script>
-</body>
+  </body>
 </html>
