@@ -54,16 +54,14 @@ https://cdn.jsdelivr.net/npm/notiflix@3.2.8/dist/notiflix-aio-3.2.8.min.js
 
       function handleFormSubmition(e) {
         e.preventDefault();
-        // if (nameField.value.length < 3)
-        //     Notiflix.Notify.failure("invalid name")
-
-
-
-        console.log(validdateMail(mail.value));
+        if (nameField.value.length < 3) Notiflix.Notify.failure("invalid name")
+        if(!validdateMail(mail.value)){
+            Notiflix.Notify.failure("invalid email")
+        }
       }
       function validdateMail(mail) {
         console.log(mail.split("@"))
-        return(mai.includes("@"))
+        return(mail.includes("@"))
       }
     </script>
   </body>
