@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOm 6</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 70vh;
+            margin: auto;
+            padding: 2rem;
+            background-color: lightblue;
+            border-radius: 2rem;
+            margin-top: 16%;
+        }
+        input{
+            width: max-content;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-
+    <form action="">
+        <input type="text" placeholder="Enter your name" id="name">
+        <input type="email" placeholder="Enter your email" id="email">
+        <input type="number" placeholder="Enter mobile number" id="mobile">
+        <input type="password" placeholder="Enter password" id="password">
+        <input type="password" placeholder="Confirm password" id="cnfpassword">
+        <input type="submit">
+    </form>
     <script>
     </script>
 </body>
