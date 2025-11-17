@@ -25,6 +25,10 @@
             width: max-content;
             margin: auto;
         }
+        #btn:hover{
+            background-color:lightgray;
+
+        }
     </style>
 </head>
 <body>
@@ -34,9 +38,15 @@
         <input type="number" placeholder="Enter mobile number" id="mobile">
         <input type="password" placeholder="Enter password" id="password">
         <input type="password" placeholder="Confirm password" id="cnfpassword">
-        <input type="submit">
+        <input type="submit" id="btn">
     </form>
     <script>
+        const submit = document.getElementById("btn");
+        const nameField = document.getElementById("name");
+        submit.addEventListener('click',handleFormSubmition)
+        function handleFormSubmition(e){
+            e.preventDefault();
+        }
     </script>
 </body>
 </html>
