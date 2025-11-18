@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom 10 async</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-        
+        let pizza;
+        function orderpizza(callback){
+            console.log("Placed oreder");
+            setTimeout(()=>{
+                pizza=`🍕`
+                callback()
+            },3000)
+        }
+        function deliverpizza(){
+            console.log(`SIr your pizza ${pizza}`)
+        }
+        orderpizza(deliverpizza)
+        setTimeout(()=>{
+            console.log("...let's eat");
+            setTimeout(()=>{
+                console.log("Washing hand");
+                setTimeout(()=>{
+                    console.log("Move to bed")
+                },3000)
+            },2000)
+        },5000)
     </script>
 </body>
 </html>
