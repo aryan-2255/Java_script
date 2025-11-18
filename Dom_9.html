@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom 9</title>
+    <title>Dom 9 sync & async</title>
 </head>
 <body>
-    
+    <script>
+
+        function aryan(){
+            console.log("hello frm aryan")
+        }
+
+        function yash(){
+            console.log("hello frm yash")
+            Varad()
+        }
+
+        function Varad(){
+            console.log("hello frm varad")
+            // aryan()
+            setTimeout(function(){
+                aryan()
+            },1000)
+        }
+        
+        yash()
+    </script>
 </body>
 </html>
