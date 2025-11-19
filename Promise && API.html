@@ -18,9 +18,11 @@
     <script>
         let api ="https://jsonplaceholder.typicode.com/posts";
         const response = fetch(api)
+        
         response.then((data)=>{
             return data.json();
-        }).then((read)=>{
+        })
+        .then((read)=>{
             for(let i=0; i<read.length; i++){
                 console.log(read[i])
             let element = document.createElement("p");
