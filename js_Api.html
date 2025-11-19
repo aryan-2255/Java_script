@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style></style>
+    
+</head>
+<body>
+    <script>
+        let api ="https://fakestoreapi.com/products";
+        const response = fetch(api);
+        response.then((data)=>{
+            return data.json();
+        }).then((read)=>{
+            for(let i=0; i<read.length; i++){
+                let div = document.createElement("div");
+                let p = document.createElement("p");
+                let item = document.createElement("p");
+                let image = document.createElement("img")
+                image.setAttribute("src",read[i].image)
+                p.innerHTML=read[i].category
+                item.innerHTML=read[i].description
+                div.append(p,item,image);
+                document.body.append(div)
+            }
+        })
+    </script>
+</body>
+</html>
