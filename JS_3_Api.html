@@ -11,8 +11,12 @@
         <input type="text" placeholder="image URL" name="image">
         <input type="submit">
     </form>
+    <div class="container">
+
+    </div>
 
     <script>
+        const container = document.querySelector(".container")
         const url = "https://691ff54a31e684d7bfcb2996.mockapi.io/api/v1/users";
 
         const form = document.querySelector('form');
@@ -42,6 +46,29 @@
             .then(data => console.log("Success:", data))
             .catch(err => console.log("Error:", err));
         }
+
+
+
+
+
+
+        function fetchUsers(){
+            const response = fetch(url);
+            response.then((res)=>res.json()).then((users)=>{
+                renderUsers(users);
+            })
+        }
+
+        /// renderFunction
+
+        function renderUsers(users){
+            users.forEach(function(ele){
+                let div = document.createElement("div");
+                div.innerHTML = `<img src = ${ele.avatar}> <p>${ele.image}</p>`
+                container.append(div)
+            })
+        }
+        fetchUsers()
     </script>
 </body>
 </html>
