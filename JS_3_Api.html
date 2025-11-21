@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Api</title>
 </head>
 <body>
-    
+    <form>
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="image URL" name="image">
+        <input type="submit">
+    </form>
+
+    <script>
+        const url = "https://691ff54a31e684d7bfcb2996.mockapi.io/api/v1/users";
+
+        const form = document.querySelector('form');
+        form.addEventListener("submit", handleSubmit);
+
+        function handleSubmit(e){
+            e.preventDefault();
+
+            const name = form.name.value;
+            const image = form.image.value;
+
+            const data = {
+                name: name,
+                avatar: image
+            };
+
+            const response = fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            response
+            .then(res => res.json())
+            .then(data => console.log("Success:", data))
+            .catch(err => console.log("Error:", err));
+        }
+    </script>
 </body>
 </html>
