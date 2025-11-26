@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsplash Basic</title>
+</head>
+<body>
+
+<div id="box"></div>
+
+<script>
+    const api = "https://api.unsplash.com/photos/?client_id=klB4Dp3-AoRi7GzAcia1u5eMHlyGqZ9XHwx6FTO2LSI";
+
+    async function getPhotos() {
+        const res = await fetch(api);
+        const data = await res.json();
+
+        const box = document.getElementById("box");
+
+        data.forEach(item => {
+            const img = document.createElement("img");
+            img.src = item.urls.small;
+            img.height=250;
+            img.width = 250;
+            box.appendChild(img);
+        });
+    }
+
+    getPhotos();
+</script>
+
+</body>
+</html>
